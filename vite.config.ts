@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/cashback-tracker/',
   plugins: [
     react(),
     tailwindcss(),
@@ -14,15 +15,15 @@ export default defineConfig({
       manifest: {
         name: 'Cashback Tracker',
         short_name: 'Cashback',
-        description: 'Учёт кэшбэка и расходов по банковским картам',
+        description: 'Учёт кэшбэка и расходов',
         theme_color: '#10b981',
         background_color: '#ffffff',
         display: 'standalone',
-        orientation: 'portrait',
+        start_url: '/cashback-tracker/',   // ← тоже измени
         icons: [
-          { src: 'icon.svg', sizes: '192x192', type: 'image/svg+xml' },
-          { src: 'icon.svg', sizes: '512x512', type: 'image/svg+xml' },
-          { src: 'icon.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' }
+          { src: '/icon.svg', sizes: '192x192', type: 'image/svg+xml' },
+          { src: '/icon.svg', sizes: '512x512', type: 'image/svg+xml' },
+          { src: '/icon.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' }
         ]
       }
     })
@@ -31,9 +32,5 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, '.'),
     },
-  },
-  server: {
-    port: 3000,
-    host: true,
   },
 });
