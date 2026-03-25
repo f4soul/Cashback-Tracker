@@ -5,7 +5,10 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  // ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
   base: '/Cashback-Tracker/',
+  // ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
+
   plugins: [
     react(),
     tailwindcss(),
@@ -15,15 +18,29 @@ export default defineConfig({
       manifest: {
         name: 'Cashback Tracker',
         short_name: 'Cashback',
-        description: 'Учёт кэшбэка и расходов',
+        description: 'Учёт кэшбэка и расходов по банковским картам',
         theme_color: '#10b981',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/cashback-tracker/',   // ← тоже измени
+        start_url: '/Cashback-Tracker/',
+        scope: '/Cashback-Tracker/',
         icons: [
-          { src: '/icon.svg', sizes: '192x192', type: 'image/svg+xml' },
-          { src: '/icon.svg', sizes: '512x512', type: 'image/svg+xml' },
-          { src: '/icon.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' }
+          {
+            src: '/icon.svg',
+            sizes: '192x192',
+            type: 'image/svg+xml'
+          },
+          {
+            src: '/icon.svg',
+            sizes: '512x512',
+            type: 'image/svg+xml'
+          },
+          {
+            src: '/icon.svg',
+            sizes: '512x512',
+            type: 'image/svg+xml',
+            purpose: 'any maskable'
+          }
         ]
       }
     })
