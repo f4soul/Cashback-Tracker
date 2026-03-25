@@ -16,7 +16,7 @@ export default defineConfig({
       manifest: {
         name: 'Cashback Tracker',
         short_name: 'Cashback',
-        description: 'Учёт кэшбэка и расходов по банковским картам',
+        description: 'Учёт кэшбэка по банковским картам',
         theme_color: '#10b981',
         background_color: '#ffffff',
         display: 'standalone',
